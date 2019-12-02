@@ -1,0 +1,47 @@
+<html>
+ <head>
+  <title>School</title>
+  <style>
+        th, td, p, input {
+            font:14px Verdana;
+        }
+        table, th, td 
+        {
+            border: solid 1px #DDD;
+            border-collapse: collapse;
+            padding: 2px 3px;
+            text-align: center;
+        }
+        th {
+            font-weight:bold;
+        }
+    </style>
+ </head>
+ <body>
+    <h2>Tabular View of Class Room</h2>
+    <table id="order-listing">
+        <thead>
+            <tr>
+                <th>Name </th>
+                <th>Shape</th>
+                <th>Capacity</th>
+                <th>Support Web Lecture</th>
+                <th>Subjects</th>
+                <th>Teachers</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for class in classrooms %}
+            <tr>
+                <td>{{class.name}}</td>
+                <td>{{class.shape}}</td>
+                <td>{{class.capacity}}</td>
+                <td>{% if class.web_lecture_support %} Yes {% else %} No {% endif %}</td>
+                <td>{% for sub in class.subjects %} {{sub}}, {% endfor %}</td>
+                <td>{% for sub in class.teachers %} {{sub}}, {% endfor %}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+ </body>
+</html>
