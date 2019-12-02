@@ -73,7 +73,7 @@ class StudentSerializer(serializers.ModelSerializer):
     subjects_id = serializers.PrimaryKeyRelatedField(
         queryset=Subject.objects.all(), write_only=True, many=True
     )
-    teachers = TeacherSerializer(read_only=True, many=True)
+    teachers = TeacherNormalSerializer(read_only=True, many=True)
     teachers_id = serializers.PrimaryKeyRelatedField(
         queryset=Teacher.objects.all(), write_only=True, many=True
     )
