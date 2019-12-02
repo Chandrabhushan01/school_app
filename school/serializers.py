@@ -10,10 +10,6 @@ from .models import Student
 from .models import Relative
 
 class SubjectSerializer(serializers.ModelSerializer):
-    # teachers = serializers.SerializerMethodField()
-
-    # def get_teachers(self, obj):
-    #     return obj.teacher_set.all()
 
     class Meta(object):
         model = Subject
