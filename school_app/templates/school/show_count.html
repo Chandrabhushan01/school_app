@@ -9,11 +9,13 @@
     <button><a href="/total-salary">Question 3</a></button>
     <button><a href="/subjects">Question 4</a></button>
      {% if total_salary %}
+        <h2>Question 3</h2>
         <h3>No of students taught by teachers earning more than 1 Lac per month and the sum of their salaries</h3>
         <P><b>No of Student: </b>{{student_count}}</P>
         <P><b>Total Salary of teachers earning more than 1 lac per month: </b>{{total_salary}}</P>
      {% endif %}
      {% if total_hours %}
+        <h2>Question 4</h2>
         <h3>No of students, No of teachers, and total hours required for subjects that are taught by more than 1 teacher</h3>
         <P><b>No of Student: </b>{{students_count}}</P>
         <P><b>No of Teacher: </b>{{teachers_count}}</P>
