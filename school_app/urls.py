@@ -24,11 +24,12 @@ from school.views import TeacherWithMoreSubjectView, IndexView
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    url(r'^index/$', IndexView.as_view(), name='index'),
-    url(r'^classroom/$', ClassRoomView.as_view(), name='classroom'),
-    url(r'^teacher-search/$', TeacherSearchView.as_view(), name='teacher-search'),
-    url(r'^search/$', teacher_fetch_view, name='search'),
-    url(r'^total-salary/$', SalaryView.as_view(), name='salary'),
-    url(r'^subjects/$', TeacherWithMoreSubjectView.as_view(), name='subjects'),
+    path('', IndexView.as_view(), name='index', include([
+        url(r'^classroom/$', ClassRoomView.as_view(), name='classroom'),
+        url(r'^teacher-search/$', TeacherSearchView.as_view(), name='teacher-search'),
+        url(r'^search/$', teacher_fetch_view, name='search'),
+        url(r'^total-salary/$', SalaryView.as_view(), name='salary'),
+        url(r'^subjects/$', TeacherWithMoreSubjectView.as_view(), name='subjects'),
+    ]))
 ]
 
