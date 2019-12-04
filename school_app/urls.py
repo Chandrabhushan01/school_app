@@ -24,7 +24,7 @@ from school.views import TeacherWithMoreSubjectView, IndexView
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    url(r'^$', IndexView.as_view(), name='index'),
+    url(r'^/$', IndexView.as_view(), name='index'),
     url(r'^classroom/$', ClassRoomView.as_view(), name='classroom'),
     url(r'^teacher-search/$', TeacherSearchView.as_view(), name='teacher-search'),
     url(r'^search/$', teacher_fetch_view, name='search'),
