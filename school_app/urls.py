@@ -17,6 +17,8 @@ from django.contrib import admin
 from django.urls import path
 from django.conf.urls import url, include
 
+from django.views.generic.base import RedirectView
+
 from school.views import ClassRoomView, TeacherSearchView
 from school.views import teacher_fetch_view, SalaryView
 from school.views import TeacherWithMoreSubjectView, IndexView
@@ -24,6 +26,7 @@ from school.views import TeacherWithMoreSubjectView, IndexView
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    url(r'^$', RedirectView.as_view(url='index/', permanent=False), name='home'),
     url(r'^index/$', IndexView.as_view(), name='index'),
     url(r'^classroom/$', ClassRoomView.as_view(), name='classroom'),
     url(r'^teacher-search/$', TeacherSearchView.as_view(), name='teacher-search'),
